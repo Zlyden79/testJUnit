@@ -9,8 +9,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class PasswordCheckerTest {
     PasswordChecker pwc;
 
@@ -34,7 +32,7 @@ class PasswordCheckerTest {
         );
     }
 
-    public static Stream<Arguments> verify() {
+    public static Stream<Arguments> testVerify() {
         return Stream.of(
                 Arguments.of("password", true),
                 Arguments.of("passssword", false),
@@ -55,7 +53,7 @@ class PasswordCheckerTest {
 
     @ParameterizedTest
     @MethodSource
-    void verify(String password, boolean expected) {
+    void testVerify(String password, boolean expected) {
         //arrange
 
         //act
